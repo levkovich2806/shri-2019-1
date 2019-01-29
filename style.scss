@@ -1,0 +1,583 @@
+// Можно шрифты и иконки скачать и подключить локально, но, т. к. в задании не оговаривался данный пункт решил этого не делать
+@import url('https://fonts.googleapis.com/css?family=Montserrat:800&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=PT+Mono&subset=cyrillic');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans&subset=cyrillic');
+$color1: #FFFFFF;
+$color2: #EFF1F2;
+$color3: #25282A;
+$color4: #000000;
+$color5: #0059D9;
+$color6: #71ABFF;
+$color7: #C5CDD7;
+$color8: #395A99;
+$color9: #51ADEF;
+$color10: #2CA5E0;
+body {
+  margin: 0;
+  font-family: 'PT Mono';
+  background-color: $color2;
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $color5;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  transition: 0.5s;
+  color: $color4;
+}
+
+a:active {
+  color: $color5;
+  transition: 0.5s;
+  opacity: 0.7;
+}
+
+.content {
+  padding: 20px 0;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 52px 20px;
+  /* Подзаголовок */
+  &__title {
+    font-family: 'Montserrat';
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: 16px;
+    &-white {
+      color: $color1;
+    }
+  }
+  &__description {
+    &-white {
+      color: $color1;
+    }
+  }
+}
+
+/* Крупный текст */
+
+.largeText {
+  font-family: 'Montserrat';
+  font-size: 18px;
+  line-height: 24px;
+}
+
+/* Пользовательский ввод */
+
+.userText {
+  font-family: 'PT Sans';
+  font-size: 16px;
+  line-height: 20px;
+}
+
+/* Наборный текст 1 */
+
+.typeTextOne {
+  font-family: 'PT Mono';
+  font-size: 14px;
+  line-height: 20px;
+  opacity: 0.7; //Ни где больше не используется в шрифтах - вписал сюда сразу
+  &-op100 {
+    opacity: 1;
+  }
+}
+
+/* Наборный текст 2 */
+
+.typeTextTwo {
+  font-family: 'PT Sans';
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.btn {
+  width: 280px;
+  display: inline-block;
+  background-color: $color5;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 14px 0;
+  cursor: pointer;
+  &-primary {
+    color: $color1;
+  }
+}
+
+.btn:hover {
+  transition: 0.5s;
+  background-color: $color4;
+  color: $color1;
+}
+
+.btn:active {
+  background-color: $color5;
+  color: $color1;
+  transition: 0.5s;
+  opacity: 0.7;
+}
+
+/* Шапка */
+
+.header {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* Заголовок */
+  &__title {
+    margin-top: 32px;
+    margin-bottom: 8px;
+    font-family: 'Montserrat';
+    font-size: 32px;
+    line-height: 36px;
+  }
+  &__description {
+    width: 280px;
+    margin: 0 auto;
+  }
+  &__btn {
+    margin-top: 20px;
+  }
+}
+
+// #showcase .content {
+//   display: table-cell;
+//   vertical-align: middle;
+// }
+.logo {
+  display: block;
+  margin: 0 auto;
+  width: 205px;
+  height: 205px;
+  z-index: 1;
+  &__img {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: none;
+    z-index: 2;
+    width: inherit;
+    height: inherit;
+  }
+}
+
+#expectation {
+  background-color: $color1;
+  text-align: left;
+  padding-bottom: 15px;
+}
+
+.expectation_list {
+  padding: 0;
+}
+
+.expectation {
+  display: grid;
+  grid-template-columns: 1fr 20px;
+  &__action {
+    grid-row: 1;
+    text-align: right;
+    color: $color5;
+    line-height: 28px;
+    font-size: 34px;
+  }
+  &__action span {
+    display: block;
+  }
+  &__title {
+    grid-row: 1;
+    color: $color5;
+  }
+  &__action,
+  &__title {
+    border-top: 1px solid #D2D9E2;
+    padding-top: 14px;
+    padding-bottom: 12px;
+  }
+  &__title:hover,
+  &-first &__title {
+    transition: 0.5s;
+    color: $color4;
+  }
+  &__title:hover~div,
+  &__action:hover~div,
+  &-first &__description {
+    display: block;
+  }
+  /**
+  * В спецификации -495deg, в макетах другие... сделал как в спецификации
+  */
+  &__title:hover+p span,
+  &__action:hover span,
+  &-first &__action span {
+    -webkit-transform: rotate(-495deg);
+    -moz-transform: rotate(-495deg);
+    /* Firefox */
+    -ms-transform: rotate(-495deg);
+    /* IE */
+    -o-transform: rotate(-495deg);
+    /* Opera */
+    transform: rotate(-495deg);
+    transition: 0.5s;
+    color: $color4;
+    text-align: right;
+  }
+  &__description {
+    grid-column: 1 / 6;
+    grid-row: 2;
+    display: none;
+    margin-bottom: 20px;
+  }
+}
+
+#my-works {
+  background-color: $color3;
+  .content {
+    &__title {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+.work {
+  margin-top: 60px;
+  &__title {
+    color: $color1;
+  }
+  &__link {
+    color: $color6;
+  }
+  &__link:active {
+    color: $color6;
+    opacity: 0.7;
+  }
+  &__link:hover {
+    color: $color1;
+  }
+  &__description {
+    color: $color1;
+    text-align: left;
+    margin-top: 16px;
+  }
+  &__gallery {
+    margin-top: 16px;
+  }
+}
+
+.slider-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(1fr, auto);
+  grid-template-areas: "items" "description";
+}
+
+.slider-wrapper {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08), 0 7px 22px 0 rgba(0, 0, 0, 0.12);
+}
+
+.slider-wrapper,
+.slider,
+.slide,
+.slider-wrapper img {
+  max-width: 100%;
+  vertical-align: middle;
+  border-radius: 4px;
+}
+
+.trigger {
+  display: none;
+}
+
+.slider,
+.slider-wrapper {
+  position: relative;
+  margin: 0 auto;
+  height: 150px;
+  width: 280px;
+}
+
+.slide {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 300;
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+}
+
+.slide-img {
+  height: 100%;
+  object-fit: fill;
+  display: block;
+  margin: 0 auto;
+}
+
+.slide-figure {
+  height: 100%;
+  position: relative;
+  margin: 0;
+}
+
+.trigger:checked+.slide {
+  z-index: 400;
+  opacity: 1;
+}
+
+.slider-nav {
+  width: 100%;
+  text-align: center;
+  margin-top: 16px;
+  grid-area: items;
+  line-height: 16px;
+}
+
+.slider-nav-description {
+  grid-area: description;
+}
+
+.slider-nav__item {
+  height: 8px;
+  width: 8px;
+  margin: 4px 0 0 4px;
+  border-radius: 50%;
+  background-color: $color6;
+  transition: background-color .25s, color .25s ease-in-out;
+}
+
+.slider-nav__label {
+  width: 16px;
+  height: 16px; // border: 1px red solid;
+  display: inline-block;
+  font-size: 13px;
+  text-align: center;
+  color: $color1;
+  cursor: pointer;
+}
+
+.slider-nav__label:hover>.slider-nav__item {
+  background-color: $color1;
+}
+
+.slider-nav__label:active>.slider-nav__item {
+  background-color: $color6;
+  opacity: 0.7;
+}
+
+#contacts {
+  .content {
+    &__description {
+      margin: 20px 0;
+    }
+  }
+}
+
+.socials {
+  &__icon {
+    color: $color1;
+    margin-right: 16px;
+    font-size: 24px;
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    line-height: 52px;
+    &-facebook {
+      background-color: $color8;
+    }
+    &-vk {
+      background-color: $color9;
+    }
+    &-telegram {
+      background-color: $color10;
+    }
+    &-facebook:hover,
+    &-vk:hover,
+    &-telegram:hover {
+      background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20));
+      background-blend-mode: multiply;
+      color: $color1;
+    }
+    &-facebook:active {
+      opacity: 0.7;
+      background: $color8;
+    }
+  }
+}
+
+textarea {
+  height: 136px;
+  resize: none;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(1fr, auto);
+  grid-template-areas: "name" "email" "message" "upload" "submit";
+  color: $color4;
+  &__item {
+    margin-bottom: 16px;
+    padding: 6px 12px 10px 12px;
+    border-radius: 4px;
+    background-color: $color1;
+    border: 1px solid rgba(31, 64, 111, 0.20);
+  }
+  &__upload {
+    cursor: pointer;
+    background: none;
+    color: $color5;
+    display: inline-block;
+  }
+  &__upload:hover {
+    color: $color4;
+  }
+  &__upload:active {
+    color: $color5;
+    opacity: 0.7;
+  }
+  &__upload input[type="file"] {
+    position: absolute;
+    top: -1000px;
+  }
+  &__name {
+    grid-area: name;
+  }
+  &__email {
+    grid-area: email;
+  }
+  &__message {
+    grid-area: message;
+  }
+  &__upload {
+    grid-area: upload;
+  }
+  &__submit {
+    grid-area: submit;
+    border: none;
+    width: 100%;
+  }
+  &__item:focus {
+    border: 1px solid $color5;
+    border-radius: 4px;
+  }
+}
+
+::-webkit-input-placeholder {
+  opacity: 0.3;
+}
+
+::-moz-placeholder {
+  opacity: 0.3;
+}
+
+::-ms-placeholder {
+  opacity: 0.3;
+}
+
+::placeholder {
+  opacity: 0.3;
+}
+
+@media (min-width: 600px) {
+  .content {
+    padding: 52px 40px;
+  }
+  .header {
+    &__title {
+      margin-top: 36px;
+      font-family: 'Montserrat';
+      font-size: 40px;
+      line-height: 44px;
+    }
+  }
+  .logo {
+    width: 250px;
+    height: 250px;
+  }
+  .slider,
+  .slider-wrapper {
+    position: relative;
+    margin: 0 auto;
+    height: 280px;
+    width: 520px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .content {
+    padding: 100px 150px;
+  }
+  .logo {
+    width: 340px;
+    height: 340px;
+  }
+  .work {
+    margin-top: 80px;
+    &__gallery {
+      margin-top: 20px;
+    }
+    &__description {
+      margin-top: 20px;
+    }
+  }
+  .slider,
+  .slider-wrapper {
+    position: relative;
+    margin: 0 auto;
+    height: 377px;
+    width: 700px;
+  }
+  .slider-nav-grid {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "description items";
+  }
+  .slider-nav {
+    margin-top: 24px;
+    text-align: right;
+  }
+  #contacts {
+    .content {
+      &__description {
+        margin: 20px 0 40px 0;
+      }
+    }
+  }
+  .form {
+    grid-template-areas: "name email" "message message" "upload upload" "submit submit";
+    grid-column-gap: 20px;
+    &__item {
+      margin-bottom: 20px;
+    }
+    &__name {
+      grid-column: 1 / 2;
+      grid-row: 1;
+    }
+    &__email {
+      grid-column: 2 / 2;
+      grid-row: 1;
+    }
+  }
+}

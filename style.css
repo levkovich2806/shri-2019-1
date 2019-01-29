@@ -1,0 +1,551 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:800&subset=cyrillic");
+@import url("https://fonts.googleapis.com/css?family=PT+Mono&subset=cyrillic");
+@import url("https://fonts.googleapis.com/css?family=PT+Sans&subset=cyrillic");
+body {
+  margin: 0;
+  font-family: "PT Mono";
+  background-color: #EFF1F2;
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #0059D9;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  transition: 0.5s;
+  color: #000000;
+}
+
+a:active {
+  color: #0059D9;
+  transition: 0.5s;
+  opacity: 0.7;
+}
+
+.content {
+  padding: 20px 0;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 52px 20px;
+  /* Подзаголовок */
+}
+.content__title {
+  font-family: "Montserrat";
+  font-size: 32px;
+  line-height: 36px;
+  margin-bottom: 16px;
+}
+.content__title-white {
+  color: #FFFFFF;
+}
+.content__description-white {
+  color: #FFFFFF;
+}
+
+/* Крупный текст */
+.largeText {
+  font-family: "Montserrat";
+  font-size: 18px;
+  line-height: 24px;
+}
+
+/* Пользовательский ввод */
+.userText {
+  font-family: "PT Sans";
+  font-size: 16px;
+  line-height: 20px;
+}
+
+/* Наборный текст 1 */
+.typeTextOne {
+  font-family: "PT Mono";
+  font-size: 14px;
+  line-height: 20px;
+  opacity: 0.7;
+}
+.typeTextOne-op100 {
+  opacity: 1;
+}
+
+/* Наборный текст 2 */
+.typeTextTwo {
+  font-family: "PT Sans";
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.btn {
+  width: 280px;
+  display: inline-block;
+  background-color: #0059D9;
+  border-radius: 4px;
+  text-decoration: none;
+  padding: 14px 0;
+  cursor: pointer;
+}
+.btn-primary {
+  color: #FFFFFF;
+}
+
+.btn:hover {
+  transition: 0.5s;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.btn:active {
+  background-color: #0059D9;
+  color: #FFFFFF;
+  transition: 0.5s;
+  opacity: 0.7;
+}
+
+/* Шапка */
+.header {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  /* Заголовок */
+}
+.header__title {
+  margin-top: 32px;
+  margin-bottom: 8px;
+  font-family: "Montserrat";
+  font-size: 32px;
+  line-height: 36px;
+}
+.header__description {
+  width: 280px;
+  margin: 0 auto;
+}
+.header__btn {
+  margin-top: 20px;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  width: 205px;
+  height: 205px;
+  z-index: 1;
+}
+.logo__img {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  border: none;
+  z-index: 2;
+  width: inherit;
+  height: inherit;
+}
+
+#expectation {
+  background-color: #FFFFFF;
+  text-align: left;
+  padding-bottom: 15px;
+}
+
+.expectation_list {
+  padding: 0;
+}
+
+.expectation {
+  display: grid;
+  grid-template-columns: 1fr 20px;
+  /**
+  * В спецификации -495deg, в макетах другие... сделал как в спецификации
+  */
+}
+.expectation__action {
+  grid-row: 1;
+  text-align: right;
+  color: #0059D9;
+  line-height: 28px;
+  font-size: 34px;
+}
+.expectation__action span {
+  display: block;
+}
+.expectation__title {
+  grid-row: 1;
+  color: #0059D9;
+}
+.expectation__action, .expectation__title {
+  border-top: 1px solid #D2D9E2;
+  padding-top: 14px;
+  padding-bottom: 12px;
+}
+.expectation__title:hover, .expectation-first .expectation__title {
+  transition: 0.5s;
+  color: #000000;
+}
+.expectation__title:hover ~ div, .expectation__action:hover ~ div, .expectation-first .expectation__description {
+  display: block;
+}
+.expectation__title:hover + p span, .expectation__action:hover span, .expectation-first .expectation__action span {
+  -webkit-transform: rotate(-495deg);
+  -moz-transform: rotate(-495deg);
+  /* Firefox */
+  -ms-transform: rotate(-495deg);
+  /* IE */
+  -o-transform: rotate(-495deg);
+  /* Opera */
+  transform: rotate(-495deg);
+  transition: 0.5s;
+  color: #000000;
+  text-align: right;
+}
+.expectation__description {
+  grid-column: 1/6;
+  grid-row: 2;
+  display: none;
+  margin-bottom: 20px;
+}
+
+#my-works {
+  background-color: #25282A;
+}
+#my-works .content__title {
+  margin-bottom: 8px;
+}
+
+.work {
+  margin-top: 60px;
+}
+.work__title {
+  color: #FFFFFF;
+}
+.work__link {
+  color: #71ABFF;
+}
+.work__link:active {
+  color: #71ABFF;
+  opacity: 0.7;
+}
+.work__link:hover {
+  color: #FFFFFF;
+}
+.work__description {
+  color: #FFFFFF;
+  text-align: left;
+  margin-top: 16px;
+}
+.work__gallery {
+  margin-top: 16px;
+}
+
+.slider-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(1fr, auto);
+  grid-template-areas: "items" "description";
+}
+
+.slider-wrapper {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08), 0 7px 22px 0 rgba(0, 0, 0, 0.12);
+}
+
+.slider-wrapper,
+.slider,
+.slide,
+.slider-wrapper img {
+  max-width: 100%;
+  vertical-align: middle;
+  border-radius: 4px;
+}
+
+.trigger {
+  display: none;
+}
+
+.slider,
+.slider-wrapper {
+  position: relative;
+  margin: 0 auto;
+  height: 150px;
+  width: 280px;
+}
+
+.slide {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 300;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide-img {
+  height: 100%;
+  object-fit: fill;
+  display: block;
+  margin: 0 auto;
+}
+
+.slide-figure {
+  height: 100%;
+  position: relative;
+  margin: 0;
+}
+
+.trigger:checked + .slide {
+  z-index: 400;
+  opacity: 1;
+}
+
+.slider-nav {
+  width: 100%;
+  text-align: center;
+  margin-top: 16px;
+  grid-area: items;
+  line-height: 16px;
+}
+
+.slider-nav-description {
+  grid-area: description;
+}
+
+.slider-nav__item {
+  height: 8px;
+  width: 8px;
+  margin: 4px 0 0 4px;
+  border-radius: 50%;
+  background-color: #71ABFF;
+  transition: background-color 0.25s, color 0.25s ease-in-out;
+}
+
+.slider-nav__label {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  font-size: 13px;
+  text-align: center;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.slider-nav__label:hover > .slider-nav__item {
+  background-color: #FFFFFF;
+}
+
+.slider-nav__label:active > .slider-nav__item {
+  background-color: #71ABFF;
+  opacity: 0.7;
+}
+
+#contacts .content__description {
+  margin: 20px 0;
+}
+
+.socials__icon {
+  color: #FFFFFF;
+  margin-right: 16px;
+  font-size: 24px;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  line-height: 52px;
+}
+.socials__icon-facebook {
+  background-color: #395A99;
+}
+.socials__icon-vk {
+  background-color: #51ADEF;
+}
+.socials__icon-telegram {
+  background-color: #2CA5E0;
+}
+.socials__icon-facebook:hover, .socials__icon-vk:hover, .socials__icon-telegram:hover {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  background-blend-mode: multiply;
+  color: #FFFFFF;
+}
+.socials__icon-facebook:active {
+  opacity: 0.7;
+  background: #395A99;
+}
+
+textarea {
+  height: 136px;
+  resize: none;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: repeat(1fr, auto);
+  grid-template-areas: "name" "email" "message" "upload" "submit";
+  color: #000000;
+}
+.form__item {
+  margin-bottom: 16px;
+  padding: 6px 12px 10px 12px;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(31, 64, 111, 0.2);
+}
+.form__upload {
+  cursor: pointer;
+  background: none;
+  color: #0059D9;
+  display: inline-block;
+}
+.form__upload:hover {
+  color: #000000;
+}
+.form__upload:active {
+  color: #0059D9;
+  opacity: 0.7;
+}
+.form__upload input[type=file] {
+  position: absolute;
+  top: -1000px;
+}
+.form__name {
+  grid-area: name;
+}
+.form__email {
+  grid-area: email;
+}
+.form__message {
+  grid-area: message;
+}
+.form__upload {
+  grid-area: upload;
+}
+.form__submit {
+  grid-area: submit;
+  border: none;
+  width: 100%;
+}
+.form__item:focus {
+  border: 1px solid #0059D9;
+  border-radius: 4px;
+}
+
+::-webkit-input-placeholder {
+  opacity: 0.3;
+}
+
+::-moz-placeholder {
+  opacity: 0.3;
+}
+
+::-ms-placeholder {
+  opacity: 0.3;
+}
+
+::placeholder {
+  opacity: 0.3;
+}
+
+@media (min-width: 600px) {
+  .content {
+    padding: 52px 40px;
+  }
+
+  .header__title {
+    margin-top: 36px;
+    font-family: "Montserrat";
+    font-size: 40px;
+    line-height: 44px;
+  }
+
+  .logo {
+    width: 250px;
+    height: 250px;
+  }
+
+  .slider,
+.slider-wrapper {
+    position: relative;
+    margin: 0 auto;
+    height: 280px;
+    width: 520px;
+  }
+}
+@media (min-width: 1000px) {
+  .content {
+    padding: 100px 150px;
+  }
+
+  .logo {
+    width: 340px;
+    height: 340px;
+  }
+
+  .work {
+    margin-top: 80px;
+  }
+  .work__gallery {
+    margin-top: 20px;
+  }
+  .work__description {
+    margin-top: 20px;
+  }
+
+  .slider,
+.slider-wrapper {
+    position: relative;
+    margin: 0 auto;
+    height: 377px;
+    width: 700px;
+  }
+
+  .slider-nav-grid {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "description items";
+  }
+
+  .slider-nav {
+    margin-top: 24px;
+    text-align: right;
+  }
+
+  #contacts .content__description {
+    margin: 20px 0 40px 0;
+  }
+
+  .form {
+    grid-template-areas: "name email" "message message" "upload upload" "submit submit";
+    grid-column-gap: 20px;
+  }
+  .form__item {
+    margin-bottom: 20px;
+  }
+  .form__name {
+    grid-column: 1/2;
+    grid-row: 1;
+  }
+  .form__email {
+    grid-column: 2/2;
+    grid-row: 1;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
